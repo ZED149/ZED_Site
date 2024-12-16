@@ -9,6 +9,9 @@ ZED | Blog
 <!--CSS file-->
 {%block page_css%}
 <link rel="stylesheet" href="{%static "blog/blog.css"%}">
+<link rel="stylesheet" href="{%static "blog/all-posts.css"%}">
+<link rel="stylesheet" href="{%static "blog/post-detail.css"%}">
+<link rel="stylesheet" href="{%static "blog/post.css"%}">
 {%endblock%}
 
 <!--Content-->
@@ -22,7 +25,7 @@ ZED | Blog
 
     <section id="welcome">
         <header>
-            <img src="" alt="ZED - Author of this Blog"/>
+            <img src="{%static "blog/images/max.png"%}" alt="ZED - Author of this Blog"/>
             <h2>ZED Blog is here</h2>
             <p>Hello, I am Salman Ahmad a.k.a ZED and I love to blog about tech and the world!</p>
         </header>
@@ -34,7 +37,7 @@ ZED | Blog
             <li>
                 <article class="post">
                     <a href="">
-                        <img src="" alt="Mountain Hiking">
+                        <img src="{%static "blog/images/mountains.jpg"%}" alt="Mountain Hiking">
                         <div class="post__content">
                             <h3>Mountain Hiking</h3>
                             <p>There's nothing like the view you get when hiking in the mountains! And I wasn't event prepared
