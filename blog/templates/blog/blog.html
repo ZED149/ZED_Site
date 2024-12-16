@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{%load static%}
 
 <!--Title-->
 {%block page_title%}
@@ -7,9 +8,52 @@ ZED | Blog
 
 <!--CSS file-->
 {%block page_css%}
+<link rel="stylesheet" href="{%static "blog/blog.css"%}">
 {%endblock%}
 
 <!--Content-->
 {%block content%}
+    <header id="main-navigation">
+        <h1><a href="">ZED's Blog</a></h1>
+        <nav>
+            <a href="">All Posts</a>
+        </nav>
+    </header>
 
+    <section id="welcome">
+        <header>
+            <img src="" alt="ZED - Author of this Blog"/>
+            <h2>ZED Blog is here</h2>
+            <p>Hello, I am Salman Ahmad a.k.a ZED and I love to blog about tech and the world!</p>
+        </header>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+        <ul>
+            <li>
+                <article class="post">
+                    <a href="">
+                        <img src="" alt="Mountain Hiking">
+                        <div class="post__content">
+                            <h3>Mountain Hiking</h3>
+                            <p>There's nothing like the view you get when hiking in the mountains! And I wasn't event prepared
+                                for what happened whilst I was enjoying the view!
+                            </p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+        </ul>
+    </section>
+        
+    <section id="about">
+        <h2>What I do?</h2>
+        <p>I love programming, I love to help others and I enjoy exploring new
+            technologies in general!
+        </p>
+        <p>
+            My goal is to keep growing as a developer - and if I could help you do the same, I'd be very happy!
+        </p>
+    </section>
 {%endblock%}
