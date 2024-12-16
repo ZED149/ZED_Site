@@ -10,7 +10,7 @@ def home(request):
 
 # posts
 def posts(request):
-    return HttpResponse("Posts")
+    return render(request, "blog/posts.html")
 
 
 # posts_by_slug
