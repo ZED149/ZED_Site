@@ -15,6 +15,7 @@ ZED | Blog
 
 <!--Content-->
 {%block content%}
+    <!--Welcome Section-->
     <section id="welcome">
         <header>
             <img src="{%static "blog/images/max.png"%}" alt="ZED - Author of this Blog"/>
@@ -23,24 +24,8 @@ ZED | Blog
         </header>
     </section>
 
-    <section id="latest-posts">
-        <h2>My Latest Thoughts</h2>
-        <ul>
-            <li>
-                <article class="post">
-                    <a href="">
-                        <img src="{%static "blog/images/mountains.jpg"%}" alt="Mountain Hiking">
-                        <div class="post__content">
-                            <h3>Mountain Hiking</h3>
-                            <p>There's nothing like the view you get when hiking in the mountains! And I wasn't event prepared
-                                for what happened whilst I was enjoying the view!
-                            </p>
-                        </div>
-                    </a>
-                </article>
-            </li>
-        </ul>
-    </section>
+    <!--Inludng post here-->
+    {% include "blog/includes/post.html" %}
         
     <section id="about">
         <h2>What I do?</h2>
