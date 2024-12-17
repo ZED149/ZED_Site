@@ -15,4 +15,6 @@ def posts(request):
 
 # posts_by_slug
 def posts_by_slug(request, slug):
-    return HttpResponse(slug)
+    return render(request, "blog/single_post.html", {
+        "page_title": "ZED| Salman Ahmad"
+    })
