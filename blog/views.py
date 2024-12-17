@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from datetime import date
 
 all_posts = [
@@ -87,12 +87,10 @@ def posts(request):
 # posts_by_slug
 def posts_by_slug(request, slug):
     # find the post from db with the slug passed
-    finded = None
-    for _p in all_posts:
-        if _p['slug'] == slug:
-            finded = _p
-            break
+    finded = next(post for post in all_posts if post['slug'] == slug)
     # now that we have finded, we can pass its information
+    if finded == None:
+        raise Http404()
     return render(request, "blog/single_post.html", {
         "post": finded
     })
