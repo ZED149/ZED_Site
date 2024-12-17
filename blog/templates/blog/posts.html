@@ -2,11 +2,31 @@
 {%load static%}
 
 
+<!--Page Title-->
+{%block page_title%}
+ZED | All Posts
+{%endblock%}
+
+
+<!--Adding CSS-->
+{%block page_css%}
+<link rel="stylesheet" href="{%static "blog/post.css"%}">
+<link rel="stylesheet" href="{%static "blog/all-posts.css"%}">
+{%endblock%}
+
+
 <!--Including posts-->
 {%block content%}
-{%include "blog/includes/post.html"%}
-{%include "blog/includes/post.html"%}
-{%include "blog/includes/post.html"%}
-{%include "blog/includes/post.html"%}
-{%include "blog/includes/post.html"%}
+<section id="all-posts">
+    <h2>My Collected Posts</h2>
+
+    <ul>
+        {%include "blog/includes/post.html"%}
+        {%include "blog/includes/post.html"%}
+        {%include "blog/includes/post.html"%}
+        {%include "blog/includes/post.html"%}
+        {%include "blog/includes/post.html"%}
+        {%include "blog/includes/post.html"%}
+    </ul>
+</section>
 {%endblock%}

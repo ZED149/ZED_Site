@@ -8,6 +8,7 @@ ZED | Blog
 
 <!--CSS file-->
 {%block page_css%}
+<link rel="stylesheet" href="{%static "blog/post.css"%}">
 <link rel="stylesheet" href="{%static "blog/blog.css"%}">
 {%endblock%}
 
@@ -23,8 +24,15 @@ ZED | Blog
     </section>
 
     <!--Inludng post here-->
-    {% include "blog/includes/post.html" %}
+    <!--Posts Section-->
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+        <ul>
+           {%include "blog/includes/post.html"%} 
+        </ul>
+    </section>
         
+    <!--Footer Area-->
     <section id="about">
         <h2>What I do?</h2>
         <p>I love programming, I love to help others and I enjoy exploring new

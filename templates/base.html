@@ -9,9 +9,7 @@
     <title>{%block page_title%}{% endblock %}</title>
     <!--CSS Block-->
     <link rel="stylesheet" href="{%static "app.css"%}">
-    <link rel="stylesheet" href="{%static "post.css"%}">
     <link rel="stylesheet" href="{%static "post-detail.css"%}">
-    <link rel="stylesheet" href="{%static "all-posts.css"%}">
     {%block page_css%}
     {%endblock%}
   </head>
@@ -21,7 +19,7 @@
       <nav>
           <a href="{%url "posts" %}">All Posts</a>
       </nav>
-  </header>
+    </header>
     <!--Content Block-->
     {%block content%}
     {%endblock%}
