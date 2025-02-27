@@ -2,21 +2,21 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import get_object_or_404
-from datetime import date
+from django.http import HttpResponseRedirect
 from .models import Post
 
 # home
 def home(request):
     # fetch all posts from DB
-    all_posts = Post.objects.all()[0]
+    posts = Post.objects.all().order_by("-date")[:3]
     return render(request, "blog/blog.html", {
-        "post": all_posts
+        "posts": posts
     })
 
 
 # posts
 def posts(request):
-    all_posts = Post.objects.all()
+    all_posts = Post.objects.all().order_by("-date")
     return render(request, "blog/posts.html", {
         "all_posts": all_posts
     })
@@ -28,5 +28,6 @@ def posts_by_slug(request, slug):
     # finded = Post.objects.get(slug=slug)
     finded = get_object_or_404(Post, slug=slug)
     return render(request, "blog/single_post.html", {
-        "post": finded
+        "post": finded,
+        "post_tags": finded.tags.all()
     })
